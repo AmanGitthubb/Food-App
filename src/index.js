@@ -1,14 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client"
+import Header from "./Components/Header";
+import Body from "./Components/Body";
+import Footer from "./Components/Footer";
+import "./index.css";
 
-const Header = () => {
-   return (
-     <div className="border border-black border-x-2 ">
-        <h1 className="bg-slate-600 text-indigo-600"> Heyy Cutieee !!! </h1>
-     </div>
-   )
+const AppLayout = () => {
+  return (
+    <div>
+      <Header/>
+      <Body/>
+      <Footer/>
+    </div>
+  )
 }
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<Header/>)
+root.render(<AppLayout/>)
