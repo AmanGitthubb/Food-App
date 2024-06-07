@@ -12,7 +12,7 @@ const Body = () => {
   } , [])
 
 const fetchData = () => {
-    axios.get("https://www.swiggy.com/mapi/homepage/getCards?lat=22.7195687&lng=75.8577258").then((json) => {
+    axios.get("https://www.swiggy.com/mapi/homepage/getCards?lat=30.900965&lng=75.8572758").then((json) => {
           const list = json?.data?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
          setListOfRestaurants(list)
          console.log(list);
