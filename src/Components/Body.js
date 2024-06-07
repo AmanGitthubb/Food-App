@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Restaurants from "./Restaurants";
+import axios from "axios"
 
 const Body = () => {
 
@@ -10,13 +11,15 @@ const Body = () => {
       fetchData();
   } , [])
 
-const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=12.9715987&lng=77.5945627")
-    const json = await data.json();
-    const list = json?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
-    setListOfRestaurants(list)
+const fetchData = () => {
+    axios.get("https://www.swiggy.com/mapi/homepage/getCards?lat=22.7195687&lng=75.8577258").then((json) => {
+          const list = json?.data?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+         setListOfRestaurants(list)
+         console.log(list);
 
+    })
 }
+
 
  
   
